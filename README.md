@@ -28,10 +28,6 @@ More details are given in the text of the paper.
 Input data files: ex_ci2005_2020-vs3.csv,  ex_ci2005_2021-vs3.csv
 
 Output data files: e0-e065-e65-l65-ci-2020-3.csv,  e0-e065-e65-l65-ci-2021-3.csv
-----------------------------------------------------------------------
-
-
-
 
 == Weekly excess deaths in Stata
 
