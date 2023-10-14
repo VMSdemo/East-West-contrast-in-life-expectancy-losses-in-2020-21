@@ -6,7 +6,8 @@ Additional materials for the study „ East-West mortality disparities during th
 
 =====================================================================   
 
-====== Figure and table data 
+====== Figure and table data    
+
 This folder provides data and calculations used by all tables and figures in the main text and the supplementary material
 
 =====================================================================   
