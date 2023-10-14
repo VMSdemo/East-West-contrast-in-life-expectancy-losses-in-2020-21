@@ -16,11 +16,16 @@ the supplementary material
 ====== Data and scripts
 
 == LE losses in R
-This folder provides an R script. The script calculates the baseline values of 
 
-
+This folder provides an R script together with input and output data files.  
 
 R script: e0-65e0-e65-l65-CI-from-ex_ci-vs-csv3.R
+
+The script calculates the baseline (predicted) values of the life expectancy at ages 0 and 65 and the probability of dying between ages 15 and 65
+
+and the 95% confidence limits for these quantities from the predicted age-specific death rates and their standard errors. Runs 2000 statistical simulations.
+
+More details are given in the text of the paper. 
 
 Input data files: ex_ci2005_2020-vs3.csv,  ex_ci2005_2021-vs3.csv
 
