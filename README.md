@@ -6,7 +6,8 @@ Additional materials for the study „ East-West mortality disparities during th
 =====================================================================
 
 ====== Figure and table data
-Data and calculations for all figures and tables 
+This folder provides data and calculations used by all tables and figures in the main text and 
+the supplementary material
 
 
 =====================================================================
@@ -14,6 +15,10 @@ Data and calculations for all figures and tables
 ====== Data and scripts
 
 == LE losses in R
+This folder provides an R script. The script calculates the baseline values of 
+
+
+
 R script: e0-65e0-e65-l65-CI-from-ex_ci-vs-csv3.R
 
 Input data files: ex_ci2005_2020-vs3.csv,  ex_ci2005_2021-vs3.csv
