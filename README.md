@@ -38,12 +38,16 @@ Input data file: stmf-21-Oct-2022-vs-plus-RUS2021.csv
 Output log-file: Mort-excess-weeks-cntrs.log    
 
 
-== Regression analysis of factors
-This sub-folder contains a Stata do-file together with input and output files.
-Stata do-file: Analysis-final-24-05-23.do
-The do-file runs checks on the applicability of linear OLS models. They include statistical tests of the normality of variables’ distributions, linearity, and heteroscedasticity (Breusch-Pagan/Cook-Weisberg test) of relationships between the life expectancy losses and each explanatory variable.
-Input data file: LEloss-factors.dta
-Output log-file: Analysis-LEloss-Factors-24-05-2023.log
+== Regression analysis of factors    
+
+This sub-folder contains a Stata do-file together with input and output files.    
+
+Stata do-file: Analysis-final-24-05-23.do    
+
+Input data file: LEloss-factors.dta    
+
+Output log-file: Analysis-LEloss-Factors-24-05-2023.log     
+
 
 
 
