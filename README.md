@@ -5,13 +5,13 @@ Additional materials for the study „ East-West mortality disparities during th
 
 =====================================================================
 
-====== GitHub-figure and table data
+====== Figure and table data
 Data and calculations for all figures and tables 
 
 
 =====================================================================
 
-====== GitHub-data and scripts
+====== Data and scripts
 
 == LE losses in R
 R script: e0-65e0-e65-l65-CI-from-ex_ci-vs-csv3.R
