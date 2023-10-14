@@ -11,7 +11,7 @@ Data and calculations for all figures and tables
 
 =====================================================================
 
-======== GitHub-data and scripts
+====== GitHub-data and scripts
 
 == LE losses in R
 R script: e0-65e0-e65-l65-CI-from-ex_ci-vs-csv3.R
