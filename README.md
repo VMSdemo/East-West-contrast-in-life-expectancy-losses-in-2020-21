@@ -38,15 +38,19 @@ Input data file: stmf-21-Oct-2022-vs-plus-RUS2021.csv
 Output log-file: Mort-excess-weeks-cntrs.log    
 
 
-== Regression analysis of factors    
+== Regression analysis of factors     
 
-This sub-folder contains a Stata do-file together with input and output files.    
+This sub-folder contains a Stata do-file together with input and output files.   
+
 
 Stata do-file: Analysis-final-24-05-23.do    
 
-Input data file: LEloss-factors.dta    
+
+Input data file: LEloss-factors.dta      
+
 
 Output log-file: Analysis-LEloss-Factors-24-05-2023.log     
+
 
 
 
