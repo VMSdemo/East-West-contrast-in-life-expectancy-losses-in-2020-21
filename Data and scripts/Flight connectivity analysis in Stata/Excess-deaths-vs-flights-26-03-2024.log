@@ -1,0 +1,239 @@
+-----------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\_Cloud\Corona-2019-20\Database\STMF-analysis\Age-excess-LE-study\Paper-East-West\BMJ-GH\Connectivity\Excess-deaths-
+> vs-flights-26-03-2024.log
+  log type:  text
+ opened on:  26 Mar 2024, 13:25:33
+
+. do "C:\Users\mpidr\AppData\Local\Temp\STD3dac_000000.tmp"
+
+. hist flights
+(bin=5, start=3.2, width=216.56)
+
+. hist x_etota_m
+(bin=5, start=-148.47778, width=136.29044)
+
+. 
+. * ======= Analysis of quartile variables =================
+. 
+. pctile x_pct_flights=flights, nq(4)
+
+. xtile x_fightcats4=flights, cutpoints( x_pct_flights)
+
+. 
+. sort flights
+
+. list country region flights x_fightcats4, notrim
+
+       country   region   flights   x_figh~4  
+  1.       BGR       EE       3.2          1  
+  2.       LTU       EE         6          1  
+  3.       SVN       EE        13          1  
+  4.       SVK       EE        16          1  
+  5.       HRV       EE        30          1  
+  6.       EST       EE        32          1  
+  7.       GRC       WE        74          1  
+  8.       LVA       EE        74          1  
+  9.       HUN       EE       106          2  
+ 10.       CZE       EE       110          2  
+ 11.       FIN       WE       122          2  
+ 12.       NOR       WE       159          2  
+ 13.       RUS       EE       187          2  
+ 14.       SWE       WE       225          3  
+ 15.       BEL       WE       229          3  
+ 16.       POL       EE       241          3  
+ 17.       DNK       WE       244          3  
+ 18.       PRT       WE       259          3  
+ 19.       AUT       WE       269          3  
+ 20.       NLD       WE       340          3  
+ 21.       CHE       WE       395          4  
+ 22.    FRATNP       WE       584          4  
+ 23.       ITA       WE       639          4  
+ 24.       ESP       WE       673          4  
+ 25.    DEUTNP       WE      1058          4  
+ 26.   GBRTENW       WE      1086          4  
+
+. 
+. pctile x_pct_etot_m= x_etota_m , nq(4)
+
+. xtile x_etot_m_cats4=flights, cutpoints( x_pct_etot_m )
+
+. 
+. sort x_etota_m
+
+. list country region x_etota_m x_etot_m_cats4, notrim
+
+       country   region   x_etot~m   x_etot~4  
+  1.       BGR       EE   -148.478          2  
+  2.       LVA       EE   -111.546          3  
+  3.       HUN       EE   -57.8774          3  
+  4.       HRV       EE   -46.5426          3  
+  5.       SVN       EE   -39.6711          2  
+  6.       CZE       EE   -21.4297          3  
+  7.       POL       EE   -20.3616          4  
+  8.       EST       EE     -19.08          3  
+  9.       SVK       EE   -15.1971          2  
+ 10.       RUS       EE   -13.1296          3  
+ 11.       LTU       EE   -6.31441          2  
+ 12.       DNK       WE   -5.10122          4  
+ 13.       GRC       WE    7.38357          3  
+ 14.    DEUTNP       WE    25.4006          4  
+ 15.       NOR       WE    26.6234          3  
+ 16.       FIN       WE      28.52          3  
+ 17.       AUT       WE    52.9724          4  
+ 18.       PRT       WE    65.1633          4  
+ 19.       CHE       WE    110.738          4  
+ 20.    FRATNP       WE    192.896          4  
+ 21.       SWE       WE    209.124          4  
+ 22.       NLD       WE    257.826          4  
+ 23.       BEL       WE    398.492          4  
+ 24.   GBRTENW       WE    434.609          4  
+ 25.       ITA       WE    473.454          4  
+ 26.       ESP       WE    532.974          4  
+
+. 
+. spearman x_etot_m_cats4 x_fightcats4
+
+ Number of obs =      26
+Spearman's rho =       0.9033
+
+Test of H0: x_etot_m_cats4 and x_fightcats4 are independent
+    Prob > |t| =       0.0000
+
+. 
+. ktau x_etot_m_cats4 x_fightcats4
+
+  Number of obs =      26
+Kendall's tau-a =       0.5815
+Kendall's tau-b =       0.8332
+Kendall's score =     189
+    SE of score =      39.664   (corrected for ties)
+
+Test of H0: x_etot_m_cats4 and x_fightcats4 are independent
+     Prob > |z| =       0.0000  (continuity corrected)
+
+. 
+. 
+. * ======= Analysis of simple rankings ====================
+. 
+. egen x_rank_flights = group(flights)
+
+. 
+. sort flights
+
+. list country region flights x_rank_flights, notrim 
+
+       country   region   flights   x_rank~s  
+  1.       BGR       EE       3.2          1  
+  2.       LTU       EE         6          2  
+  3.       SVN       EE        13          3  
+  4.       SVK       EE        16          4  
+  5.       HRV       EE        30          5  
+  6.       EST       EE        32          6  
+  7.       LVA       EE        74          7  
+  8.       GRC       WE        74          7  
+  9.       HUN       EE       106          8  
+ 10.       CZE       EE       110          9  
+ 11.       FIN       WE       122         10  
+ 12.       NOR       WE       159         11  
+ 13.       RUS       EE       187         12  
+ 14.       SWE       WE       225         13  
+ 15.       BEL       WE       229         14  
+ 16.       POL       EE       241         15  
+ 17.       DNK       WE       244         16  
+ 18.       PRT       WE       259         17  
+ 19.       AUT       WE       269         18  
+ 20.       NLD       WE       340         19  
+ 21.       CHE       WE       395         20  
+ 22.    FRATNP       WE       584         21  
+ 23.       ITA       WE       639         22  
+ 24.       ESP       WE       673         23  
+ 25.    DEUTNP       WE      1058         24  
+ 26.   GBRTENW       WE      1086         25  
+
+. 
+. egen x_rank_EDR = group(x_etota_m)
+
+. 
+. sort x_etota_m
+
+. list country region x_etota_m x_rank_EDR, notrim
+
+       country   region   x_etot~m   x_rank~R  
+  1.       BGR       EE   -148.478          1  
+  2.       LVA       EE   -111.546          2  
+  3.       HUN       EE   -57.8774          3  
+  4.       HRV       EE   -46.5426          4  
+  5.       SVN       EE   -39.6711          5  
+  6.       CZE       EE   -21.4297          6  
+  7.       POL       EE   -20.3616          7  
+  8.       EST       EE     -19.08          8  
+  9.       SVK       EE   -15.1971          9  
+ 10.       RUS       EE   -13.1296         10  
+ 11.       LTU       EE   -6.31441         11  
+ 12.       DNK       WE   -5.10122         12  
+ 13.       GRC       WE    7.38357         13  
+ 14.    DEUTNP       WE    25.4006         14  
+ 15.       NOR       WE    26.6234         15  
+ 16.       FIN       WE      28.52         16  
+ 17.       AUT       WE    52.9724         17  
+ 18.       PRT       WE    65.1633         18  
+ 19.       CHE       WE    110.738         19  
+ 20.    FRATNP       WE    192.896         20  
+ 21.       SWE       WE    209.124         21  
+ 22.       NLD       WE    257.826         22  
+ 23.       BEL       WE    398.492         23  
+ 24.   GBRTENW       WE    434.609         24  
+ 25.       ITA       WE    473.454         25  
+ 26.       ESP       WE    532.974         26  
+
+. 
+. spearman  x_rank_EDR x_rank_flights
+
+ Number of obs =      26
+Spearman's rho =       0.7817
+
+Test of H0: x_rank_EDR and x_rank_flights are independent
+    Prob > |t| =       0.0000
+
+. bootstrap r(rho), reps(1000) nodots : spearman x_rank_EDR x_rank_flights
+
+warning: spearman does not set e(sample), so no observations will be excluded from the resampling because of missing values or
+         other reasons. To exclude observations, press Break, save the data, drop any observations that are to be excluded, and
+         rerun bootstrap.
+
+Bootstrap results                                        Number of obs =    26
+                                                         Replications  = 1,000
+
+      Command: spearman x_rank_EDR x_rank_flights
+        _bs_1: r(rho)
+
+------------------------------------------------------------------------------
+             |   Observed   Bootstrap                         Normal-based
+             | coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _bs_1 |   .7816721   .0802478     9.74   0.000     .6243893    .9389548
+------------------------------------------------------------------------------
+
+. 
+. ktau x_rank_EDR x_rank_flights
+
+  Number of obs =      26
+Kendall's tau-a =       0.5908
+Kendall's tau-b =       0.5917
+Kendall's score =     192
+    SE of score =      45.358   (corrected for ties)
+
+Test of H0: x_rank_EDR and x_rank_flights are independent
+     Prob > |z| =       0.0000  (continuity corrected)
+
+. 
+end of do-file
+
+. log close
+      name:  <unnamed>
+       log:  C:\_Cloud\Corona-2019-20\Database\STMF-analysis\Age-excess-LE-study\Paper-East-West\BMJ-GH\Connectivity\Excess-deaths-
+> vs-flights-26-03-2024.log
+  log type:  text
+ closed on:  26 Mar 2024, 13:26:00
+-----------------------------------------------------------------------------------------------------------------------------------
